@@ -110,9 +110,11 @@ namespace Login
 			service.HideCommandPromptWindow = true; // 🔹 Konsol penceresini gizle
 
 			FirefoxOptions options = new FirefoxOptions();
-			options.AddArgument("--start-maximized");
+			//options.AddArgument("--start-maximized");
 
 			driver = new FirefoxDriver(service, options);  // Firefox kullanımı
+
+			driver.Manage().Window.Maximize();
 
 			if (IsCaptivePortal())
 			{
@@ -167,17 +169,17 @@ namespace Login
 
 			try
 			{
-				switch (profile.SubmitButtonSelector)
+				switch (profile.SubmitButtonSelectorType)
 				{
-					case "Id":
+					case SelectorType.Id:
 						submitBtn = driver.FindElement(By.Id(profile.SubmitButtonSelector.ToString()));
 						submitBtn.Click();
 						break;
-					case "Name":
+					case SelectorType.Name:
 						submitBtn = driver.FindElement(By.Name(profile.SubmitButtonSelector.ToString().Trim()));
 						submitBtn.Click();
 						break;
-					case "XPath":
+					case SelectorType.XPath:
 						string xpath = profile.SubmitButtonSelector.ToString();
 						submitBtn = driver.FindElement(By.XPath(xpath));
 						submitBtn.Click();
