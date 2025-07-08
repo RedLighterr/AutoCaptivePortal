@@ -32,8 +32,8 @@ namespace AutoCaptivePortalLogin
 
 	public enum SelectorType
 	{
-		Id,
-		Name,
-		XPath
+		Id = 0,
+		Name = 1,
+		XPath = 2
 	}
 }
