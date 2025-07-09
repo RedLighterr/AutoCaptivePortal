@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 using System.Windows.Forms;
 
 namespace AutoCaptivePortalLogin.CustomUI
@@ -20,8 +21,10 @@ namespace AutoCaptivePortalLogin.CustomUI
 			this.ForeColor = Color.Black;
 			this.Font = new Font("Segoe UI", 8.25f, FontStyle.Regular);
 			this.Cursor = Cursors.Hand;
+			this.UseVisualStyleBackColor = false;
 			this.Padding = new Padding(2);
 			this.Margin = new Padding(12);
+			this.TextImageRelation = TextImageRelation.ImageBeforeText;
 		}
 
 		protected override void OnMouseEnter(EventArgs e)
@@ -64,7 +67,7 @@ namespace AutoCaptivePortalLogin.CustomUI
 
 				// Yazıyı ortala ve çiz
 				TextRenderer.DrawText(pevent.Graphics, this.Text, this.Font, bounds, this.ForeColor,
-					TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+				TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
 			}
 		}
 	}
