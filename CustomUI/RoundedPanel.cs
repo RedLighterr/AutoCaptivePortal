@@ -7,11 +7,16 @@ namespace AutoCaptivePortalLogin.CustomUI
 	{
 		public int CornerRadius { get; set; } = 20;
 
+		public RoundedPanel()
+		{
+			this.DoubleBuffered = true;
+		}
+
 		protected override void OnPaint(PaintEventArgs e)
 		{
 			base.OnPaint(e);
 			var g = e.Graphics;
-			g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+			g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
 
 			using (var path = new System.Drawing.Drawing2D.GraphicsPath())
 			{
