@@ -31,6 +31,7 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
 			this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
 			this.footerRoundedPanel = new AutoCaptivePortalLogin.CustomUI.RoundedPanel();
+			this.linkedinButton = new AutoCaptivePortalLogin.CustomUI.ModernButton();
 			this.githubButton = new AutoCaptivePortalLogin.CustomUI.ModernButton();
 			this.instagramButton = new AutoCaptivePortalLogin.CustomUI.ModernButton();
 			this.emailMeButton = new AutoCaptivePortalLogin.CustomUI.ModernButton();
@@ -40,7 +41,6 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.manageProfilesButton = new AutoCaptivePortalLogin.CustomUI.ModernButton();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.linkedinButton = new AutoCaptivePortalLogin.CustomUI.ModernButton();
 			this.footerRoundedPanel.SuspendLayout();
 			this.roundedPanel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,6 +59,34 @@
 			this.footerRoundedPanel.Name = "footerRoundedPanel";
 			this.footerRoundedPanel.Size = new System.Drawing.Size(810, 54);
 			this.footerRoundedPanel.TabIndex = 6;
+			// 
+			// linkedinButton
+			// 
+			this.linkedinButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+			this.linkedinButton.BorderRadius = 10;
+			this.linkedinButton.centerIcon = false;
+			this.linkedinButton.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.linkedinButton.FlatAppearance.BorderSize = 0;
+			this.linkedinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.linkedinButton.Font = new System.Drawing.Font("Segoe UI", 8.25F);
+			this.linkedinButton.ForeColor = System.Drawing.Color.Black;
+			this.linkedinButton.hoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
+			this.linkedinButton.iconChar = null;
+			this.linkedinButton.iconColor = System.Drawing.Color.Black;
+			this.linkedinButton.iconFont = AutoCaptivePortalLogin.CustomUI.IconFont.solid;
+			this.linkedinButton.IconHeight = 20;
+			this.linkedinButton.IconWidth = 20;
+			this.linkedinButton.Location = new System.Drawing.Point(106, 14);
+			this.linkedinButton.Margin = new System.Windows.Forms.Padding(12);
+			this.linkedinButton.Name = "linkedinButton";
+			this.linkedinButton.normalColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+			this.linkedinButton.Padding = new System.Windows.Forms.Padding(2);
+			this.linkedinButton.Size = new System.Drawing.Size(28, 28);
+			this.linkedinButton.TabIndex = 4;
+			this.linkedinButton.Text = " ";
+			this.linkedinButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.linkedinButton.UseVisualStyleBackColor = false;
+			this.linkedinButton.Click += new System.EventHandler(this.linkedinButton_Click);
 			// 
 			// githubButton
 			// 
@@ -263,34 +291,6 @@
 			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
 			this.pictureBox1.TabIndex = 2;
 			this.pictureBox1.TabStop = false;
-			// 
-			// linkedinButton
-			// 
-			this.linkedinButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
-			this.linkedinButton.BorderRadius = 10;
-			this.linkedinButton.centerIcon = false;
-			this.linkedinButton.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.linkedinButton.FlatAppearance.BorderSize = 0;
-			this.linkedinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.linkedinButton.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-			this.linkedinButton.ForeColor = System.Drawing.Color.Black;
-			this.linkedinButton.hoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(229)))), ((int)(((byte)(236)))));
-			this.linkedinButton.iconChar = null;
-			this.linkedinButton.iconColor = System.Drawing.Color.Black;
-			this.linkedinButton.iconFont = AutoCaptivePortalLogin.CustomUI.IconFont.solid;
-			this.linkedinButton.IconHeight = 20;
-			this.linkedinButton.IconWidth = 20;
-			this.linkedinButton.Location = new System.Drawing.Point(106, 14);
-			this.linkedinButton.Margin = new System.Windows.Forms.Padding(12);
-			this.linkedinButton.Name = "linkedinButton";
-			this.linkedinButton.normalColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
-			this.linkedinButton.Padding = new System.Windows.Forms.Padding(2);
-			this.linkedinButton.Size = new System.Drawing.Size(28, 28);
-			this.linkedinButton.TabIndex = 4;
-			this.linkedinButton.Text = " ";
-			this.linkedinButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.linkedinButton.UseVisualStyleBackColor = false;
-			this.linkedinButton.Click += new System.EventHandler(this.linkedinButton_Click);
 			// 
 			// Form1
 			// 
