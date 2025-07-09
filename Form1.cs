@@ -10,6 +10,7 @@ using AutoCaptivePortalLogin;
 using AutoCaptivePortalLogin.CustomUI;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
+using Svg;
 
 namespace Login
 {
@@ -22,15 +23,15 @@ namespace Login
 		{
 			this.FormBorderStyle = FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;
-			this.MinimizeBox = true; // İsteğe bağlı
-			this.ControlBox = true;  // Üstteki kapatma butonları için
+			this.MinimizeBox = true;
+			this.ControlBox = true;
 
 			this.BackColor = Color.FromArgb(18, 18, 18);
 
 			panelProfiles = new FlowLayoutPanel
 			{
 				Location = new Point(75, 100),
-				Height = 300,
+				Height = 325,
 				Width = 700,
 				AutoScroll = true
 			};
@@ -110,7 +111,6 @@ namespace Login
 			service.HideCommandPromptWindow = true; // 🔹 Konsol penceresini gizle
 
 			FirefoxOptions options = new FirefoxOptions();
-			//options.AddArgument("--start-maximized");
 
 			driver = new FirefoxDriver(service, options);  // Firefox kullanımı
 
@@ -127,8 +127,8 @@ namespace Login
 				driver.Navigate().GoToUrl(profile.LoginUrl);
 			}
 
-			//if (!profile.AutoDetectLoginUrl)
-			//	driver.Navigate().GoToUrl(profile.LoginUrl);
+			if (!profile.AutoDetectLoginUrl)
+				driver.Navigate().GoToUrl(profile.LoginUrl);
 
 			await Task.Delay(1000);
 
@@ -253,6 +253,14 @@ namespace Login
 		private void refreshButton_Click(object sender, EventArgs e)
 		{
 			LoadProfileButtons();
+		}
+
+		private Bitmap RenderSvgToBitmap(string path, int width, int height)
+		{
+			SvgDocument svgDoc = SvgDocument.Open(path);
+			svgDoc.Width = width;
+			svgDoc.Height = height;
+			return svgDoc.Draw();
 		}
 	}
 }
