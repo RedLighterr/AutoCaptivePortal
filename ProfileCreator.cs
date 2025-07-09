@@ -1,5 +1,4 @@
 ﻿using AutoCaptivePortalLogin.CustomUI;
-using Login;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,7 +10,6 @@ namespace AutoCaptivePortalLogin
 {
 	public partial class ProfileCreator : Form
 	{
-		private Form1 form1;
 		private TextBox txtProfileName, txtLoginUrl, txtSubmitSelector;
 		private CheckBox chkIsIdButton;
 		private CheckBox chkAutoDetectUrl;
@@ -29,10 +27,11 @@ namespace AutoCaptivePortalLogin
 			this.Width = 1000;
 			this.Height = 900;
 
-			this.FormBorderStyle = FormBorderStyle.FixedSingle;
+			this.FormBorderStyle = FormBorderStyle.FixedToolWindow;
+
 			this.MaximizeBox = false;
-			this.MinimizeBox = true; // İsteğe bağlı
-			this.ControlBox = true;  // Üstteki kapatma butonları için
+			this.MinimizeBox = true;
+			this.ControlBox = true;
 
 			InitializeControls();
 
