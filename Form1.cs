@@ -16,6 +16,14 @@ namespace Login
 {
 	public partial class Form1 : Form
 	{
+		#region URLs
+		string emailUrl = "mailto:mfurkanyuce5@gmail.com?subject=Auto%20Captive%20Login";
+		string githubIssues = "https://github.com/RedLighterr/AutoCaptivePortal/issues";
+		string instagramUrl = "https://www.instagram.com/mfurkanyuce_/";
+		string githubUrl = "https://github.com/RedLighterr";
+		string linkedinUrl = "https://www.linkedin.com/in/muhammedfurkanyuce/";
+		#endregion
+
 		private ProfileCreator profileForm;
 		IWebDriver driver;
 
@@ -39,6 +47,8 @@ namespace Login
 			this.Controls.Add(panelProfiles);
 
 			LoadProfileButtons();
+
+			this.Invalidate();
 
 			InitializeComponent();
 		}
@@ -255,12 +265,63 @@ namespace Login
 			LoadProfileButtons();
 		}
 
-		private Bitmap RenderSvgToBitmap(string path, int width, int height)
+		private void Form1_Paint(object sender, PaintEventArgs e)
 		{
-			SvgDocument svgDoc = SvgDocument.Open(path);
-			svgDoc.Width = width;
-			svgDoc.Height = height;
-			return svgDoc.Draw();
+			reportBugButton.Text = " ";
+			reportBugButton.Font = new Font("Segoe UI", 10f, FontStyle.Regular);
+			reportBugButton.iconFont = IconFont.solid;
+			reportBugButton.iconColor = Color.FromArgb(0, 0, 0);
+			reportBugButton.iconChar = "bug";
+			reportBugButton.centerIcon = true;
+			reportBugButton.IconWidth = 22;
+			reportBugButton.IconHeight = 22;
+
+			instagramButton.iconFont = IconFont.brands;
+			instagramButton.iconChar = "instagram";
+			instagramButton.centerIcon = true;
+			instagramButton.IconWidth = 22;
+			instagramButton.IconHeight = 22;
+
+			githubButton.iconFont = IconFont.brands;
+			githubButton.iconChar = "github";
+			githubButton.centerIcon = true;
+			githubButton.IconWidth = 22;
+			githubButton.IconHeight = 22;
+
+			linkedinButton.iconFont = IconFont.brands;
+			linkedinButton.iconChar = "linkedin";
+			linkedinButton.centerIcon = true;
+			linkedinButton.IconWidth = 22;
+			linkedinButton.IconHeight = 22;
+
+			emailMeButton.iconChar = "envelope";
+
+			footerRoundedPanel.Controls.Add(reportBugButton);
+		}
+
+		private void reportBugButton_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start(githubIssues);
+		}
+
+		private void emailMeButton_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start(emailUrl);
+		}
+
+		private void instagramButton_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start(instagramUrl);
+		}
+
+		private void githubButton_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start(githubUrl);
+		}
+
+		private void linkedinButton_Click(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start(linkedinUrl);
 		}
 	}
 }
